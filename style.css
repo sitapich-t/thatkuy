@@ -1,0 +1,119 @@
+/* style.css */
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  header {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #2e7bc8;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 15px;
+    /* text-decoration: none; */
+  }
+  
+  section {
+    color: rgb(0, 0, 0);
+    padding: 30px;
+  }
+  
+  h2 {
+    color: #000000;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  p {
+    text-align: left;
+    margin: 5 15px;
+    margin-top: 3;
+    margin-bottom: 0;
+    color: #000000;
+  }
+  
+  #events-news {
+    background-color: #e9f1fb;
+    padding: 20px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .palette-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .color-block {
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+    color: #333;
+    font-family: Arial, san-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    width: auto;
+    max-width: 500px;
+    min-width: 350px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    height: 400px;
+    color: #333;
+  }
+
+  .color1 {background-color: #f3b3cd;}
+  .color2 {background-color: #f1c4a5;}
+  .color3 {background-color: #f7ddce;}
+  .color4 { background-color: #e34a35; color: #fff; }
+  .color5 { background-color: #f8b3b8; }
+  .color6 { background-color: #fef4f0; }
+
+  .color-block a {
+    color: #ffffff;
+  }
+
+  /* color-code {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  color-label {
+    font-size: 12px;
+    color: #666;
+  }
+
+  icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #fff;
+    opacity: 0.8;
+  } */
