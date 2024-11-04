@@ -64,6 +64,16 @@
             <p><strong>เกรด:</strong> ประกาศตั้งแต่วันที่สอบเสร็จ จนถึงวันที่ 8 เมษายน 2567</p>
           </div>
   </section>
+
+  <section>
+    <h3 id="viewCount">0</h3>
+    <script>
+      let viewCount = localStorage.getItem('viewCount') || 0;
+      viewCount++;
+      localStorage.setItem('viewCount', viewCount);
+      document.getElementById('viewCount').textContent = `${viewCount}`;
+    </script>
+  </section>
   
   <script src="script.js"></script>
 </body>
