@@ -35,6 +35,10 @@
     text-align: center;
   }
 
+  h4 {
+    color: #ffffff;
+  }
+
   p {
     text-align: left;
     margin: 5 15px;
@@ -117,3 +121,33 @@
     color: #fff;
     opacity: 0.8;
   } */
+
+  @media (max-width: 768px) {
+    .palette-container {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px;
+    }
+
+    header, section {
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .color-block {
+        padding: 15px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
