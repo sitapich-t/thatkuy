@@ -87,7 +87,7 @@
     max-width: auto;
     box-sizing: border-box;
     align-items: flex-start;
-    height: 450px;
+    height: auto;
     color: #201f1f;
   }
 
