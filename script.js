@@ -26,6 +26,6 @@ function calculateRequiredGrade() {
       resultText = `อาจจะไม่ถึงเป้าหมายที่ต้องการ<br>
       แต่ว่าสู้ๆนะ พยายามเท่าที่ไหว<br>
       ไม่ต้องกดดันมากจนเกินไปนะ`;
-
+  }
   document.getElementById('result').innerHTML = resultText;
 }
