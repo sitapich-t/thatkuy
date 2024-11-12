@@ -23,8 +23,9 @@ function calculateRequiredGrade() {
   if (requiredTotalGPA <= 4.0) {
       resultText = `เพื่อที่จะได้เกรดเฉลี่ย ${targetGPA} คุณต้องทำเกรดเฉลี่ย ${requiredTotalGPA.toFixed(2)} ในเทอมถัดไป`;
   } else {
-      resultText = `การได้เกรดเฉลี่ย ${targetGPA} เป็นไปไม่ได้จากเกรดสะสมปัจจุบันของคุณ (${currentGPA}) แม้ว่าคุณจะได้เกรด A (4.00) ในเทอมถัดไปก็ตาม`;
-  }
+      resultText = `อาจจะไม่ถึงเป้าหมายที่ต้องการ<br>
+      แต่ว่าสู้ๆนะ พยายามเท่าที่ไหว<br>
+      ไม่ต้องกดดันมากจนเกินไปนะ`;innerHTML
 
   document.getElementById('result').textContent = resultText;
 }
