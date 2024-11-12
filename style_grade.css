@@ -184,7 +184,7 @@ footer {
 }
 
 .styled-button {
-  background-color: #4CAF50;
+  background-color: #858585;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -196,7 +196,7 @@ footer {
 }
 
 .styled-button:hover {
-  background-color: #45a049;
+  background-color: #4CAF50;
   transform: scale(1.05);
 }
 
