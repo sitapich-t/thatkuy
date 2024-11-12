@@ -167,7 +167,7 @@ footer {
 }
 
 .calculate-btn {
-  width: 80%;
+  width: 100%;
   padding: 12px;
   background-color: #858585;
   border: none;
@@ -197,9 +197,9 @@ footer {
 
 .styled-button:hover {
   background-color: #45a049;
-  transform: scale(1.05);
+  transform: scale(1.0);
 }
 
 .styled-button:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
