@@ -29,3 +29,24 @@ function calculateRequiredGrade() {
     }
     document.getElementById('result').innerHTML = resultText;
   }
+
+function saveData() {
+            const year = document.getElementById("currentYear").value;
+            const term = document.getElementById("currentTerm").value;
+            const currentGPA = document.getElementById("currentGPA").value;
+            const targetGPA = document.getElementById("targetGPA").value;
+
+            fetch("save_grade.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `year=${year}&term=${term}&currentGPA=${currentGPA}&targetGPA=${targetGPA}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("result").innerText = data;
+            })
+            .catch(error => console.error("Error:", error));
+        }
+
