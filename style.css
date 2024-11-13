@@ -104,7 +104,7 @@
     color: #201f1f;
   }
 
-  /* color-code {
+/*   color-code {
     font-size: 14px;
     font-weight: bold;
   }
@@ -112,16 +112,17 @@
   color-label {
     font-size: 12px;
     color: #666;
-  }
-
-  icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 18px;
-    color: #fff;
-    opacity: 0.8;
   } */
+
+ .icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  color: #ffffff;
+  opacity: 0.8;
+  /* margin-top: 1px; */
+}
 
   @media (max-width: 768px) {
     .palette-container {
