@@ -118,7 +118,7 @@ function calculateRequiredGrade() {
     if (requiredTotalGPA <= 4.0) {
         resultText = `เพื่อที่จะได้เกรดเฉลี่ย ${targetGPA} คุณต้องทำเกรดเฉลี่ย ${requiredTotalGPA.toFixed(2)} ในเทอมถัดไป`;
     } else {
-        resultText = `อาจจะไม่ถึงเป้าหมายที่ต้องการ<br>
+        resultText = `สู้ๆ อาจจะไม่ถึงเป้าหมายที่ต้องการ<br>
         แต่พยายามเท่าที่ไหว ไม่ต้องกดดันมากจนเกินไปนะ<br>
         `;
     }
