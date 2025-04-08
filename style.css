@@ -321,7 +321,7 @@ header {
   }
   
   /* Nested tab styling */
-  /* .nested-tabs h4 {
+  .nested-tabs h4 {
     cursor: pointer;
     color: gray;
   }
