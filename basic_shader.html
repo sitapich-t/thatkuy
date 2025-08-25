@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <title>Basic Shader (Unlit) • three.js r128</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>html,body{height:100%;margin:0} canvas{display:block}</style>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+<script>
+  // Scene / Camera / Renderer
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x000000);
+
+  const camera = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 100);
+  camera.position.set(0, 0.8, 2.2);
+
+  const renderer = new THREE.WebGLRenderer({ antialias:true });
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  document.body.appendChild(renderer.domElement);
+
+  new THREE.OrbitControls(camera, renderer.domElement);
+
+  // Geometry
+  const geo = new THREE.SphereBufferGeometry(0.7, 64, 64);
+
+  // --- Basic Shader (Unlit) ---
+  const uniforms = {
+    uColor: { value: new THREE.Color(0x00ff00)},  // เปลี่ยนสีได้ที่นี่
+    uLightDirWS:  { value: new THREE.Vector3(0.5, 0.9, 0.3).normalize()}  // ทิศไฟ "ในโลก"
+  };
+
+  const vert = `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `;
+
+  const frag = `
+    precision highp float;
+    varying vec2 vUv;
+    uniform vec3 uColor;
+    uniform vec3  uLightDirWS;   // ทิศไฟใน world-space
+    varying vec3 vNormalVS;
+
+    void main() {
+        gl_FragColor = vec4(uColor, 1.0);
+
+        // vertical gradient
+        //float g = smoothstep(0.0, 1.0, vUv.y);
+        //gl_FragColor = vec4(mix(uColor*0.1, uColor, g), 1.0);
+
+    }
+  `;
+
+  const mat = new THREE.ShaderMaterial({ vertexShader: vert, fragmentShader: frag, uniforms });
+
+  const mesh = new THREE.Mesh(geo, mat);
+  scene.add(mesh);
+
+  // Resize & Animate
+  addEventListener('resize', ()=>{
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  });
+
+  (function loop(){
+    mesh.rotation.y += 0.01; // หมุนช้าๆ ให้เห็นว่า “สีไม่เปลี่ยนตามไฟ”
+    renderer.render(scene, camera);
+    requestAnimationFrame(loop);
+  })();
+</script>
+</body>
+</html>
